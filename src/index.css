@@ -6,10 +6,12 @@
 
 @layer base {
   :root {
-    /* VanPass Brand Colors */
+    /* VanPass Brand Colors - Inspired by Buson layout */
     --vanpass-navy: 218 87% 16%;        /* #04214f - Azul escuro principal */
     --vanpass-cyan: 197 100% 47%;       /* #00AEEF - Ciano destaque */
     --vanpass-cyan-light: 197 100% 85%; /* Ciano claro para backgrounds */
+    --vanpass-orange: 28 100% 60%;      /* #FF8C00 - Laranja para CTAs */
+    --vanpass-orange-hover: 28 100% 55%; /* Laranja hover */
     --vanpass-gray-light: 220 14% 96%;  /* #F5F7FA - Cinza claro fundos */
     --vanpass-gray-text: 215 15% 35%;   /* #4A5568 - Cinza texto */
     

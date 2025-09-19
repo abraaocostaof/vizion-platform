@@ -54,6 +54,8 @@ export default {
           navy: "hsl(var(--vanpass-navy))",
           cyan: "hsl(var(--vanpass-cyan))",
           "cyan-light": "hsl(var(--vanpass-cyan-light))",
+          orange: "hsl(var(--vanpass-orange))",
+          "orange-hover": "hsl(var(--vanpass-orange-hover))",
           "gray-light": "hsl(var(--vanpass-gray-light))",
           "gray-text": "hsl(var(--vanpass-gray-text))",
         },

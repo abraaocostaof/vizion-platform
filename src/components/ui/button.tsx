@@ -17,6 +17,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         hero: "gradient-hero text-white hover:opacity-90 shadow-button font-semibold",
         vanpass: "bg-vanpass-cyan text-white hover:bg-vanpass-cyan/90 shadow-button font-medium",
+        orange: "bg-vanpass-orange text-white hover:bg-vanpass-orange-hover shadow-button font-semibold",
       },
       size: {
         default: "h-12 px-6 py-3",

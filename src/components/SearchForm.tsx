@@ -31,22 +31,20 @@ export function SearchForm({ onSearch }: SearchFormProps) {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-card p-6 max-w-4xl mx-auto">
-      <h2 className="text-2xl font-semibold mb-6 text-center text-primary">
-        Encontre sua viagem
-      </h2>
-      
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="flex flex-col md:flex-row gap-4">
-          {/* Origem */}
-          <div className="flex-1 relative">
+    <div className="bg-white rounded-lg shadow-card p-4 max-w-xl mx-auto">
+      <form onSubmit={handleSubmit} className="space-y-3">
+        {/* Origem e Destino lado a lado */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div className="relative">
             <div className="relative">
-              <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+              <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
+                <div className="w-2 h-2 rounded-full border border-vanpass-cyan bg-vanpass-cyan"></div>
+              </div>
               <Input
-                placeholder="Partindo de"
+                placeholder="Saindo de..."
                 value={origin}
                 onChange={(e) => setOrigin(e.target.value)}
-                className="pl-10 h-12"
+                className="pl-7 h-10 text-sm border-gray-300 rounded"
                 list="origins"
               />
               <datalist id="origins">
@@ -57,28 +55,16 @@ export function SearchForm({ onSearch }: SearchFormProps) {
             </div>
           </div>
 
-          {/* Trocar cidades */}
-          <div className="flex justify-center items-center">
-            <Button
-              type="button"
-              variant="ghost"
-              size="icon"
-              onClick={swapCities}
-              className="rounded-full border bg-white shadow-sm hover:bg-muted"
-            >
-              <ArrowUpDown className="h-4 w-4 text-vanpass-cyan" />
-            </Button>
-          </div>
-
-          {/* Destino */}
-          <div className="flex-1 relative">
+          <div className="relative">
             <div className="relative">
-              <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+              <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
+                <MapPin className="h-3 w-3 text-vanpass-cyan" />
+              </div>
               <Input
-                placeholder="Indo para"
+                placeholder="Indo para..."
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
-                className="pl-10 h-12"
+                className="pl-7 h-10 text-sm border-gray-300 rounded"
                 list="destinations"
               />
               <datalist id="destinations">
@@ -88,32 +74,32 @@ export function SearchForm({ onSearch }: SearchFormProps) {
               </datalist>
             </div>
           </div>
+        </div>
 
-          {/* Data */}
-          <div className="flex-1 relative">
+        {/* Data e Botão */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+          <div className="md:col-span-2 relative">
             <div className="relative">
-              <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+              <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-vanpass-cyan h-3 w-3" />
               <Input
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="pl-10 h-12"
+                className="pl-7 h-10 text-sm border-gray-300 rounded"
                 min={new Date().toISOString().split('T')[0]}
               />
             </div>
           </div>
-        </div>
 
-        <Button 
-          type="submit" 
-          variant="hero" 
-          size="lg" 
-          className="w-full"
-          disabled={!origin || !destination || !date}
-        >
-          <Search className="h-5 w-5 mr-2" />
-          Buscar Passagem
-        </Button>
+          <Button 
+            type="submit" 
+            variant="orange" 
+            className="h-10 w-full text-xs font-bold uppercase tracking-wide rounded"
+            disabled={!origin || !destination || !date}
+          >
+            PROCURAR PASSAGEM
+          </Button>
+        </div>
       </form>
     </div>
   );
